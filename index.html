@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#6947e8"><meta name="description" content="A bright, challenging Year 8 revision club for the full school scheme of work.">
+  <title>Catch-Up Club | Year 8 Revision</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside>
+    <div class="logo"><span class="logo-mark">✦</span>catch-up club<small>YEAR 8 · STUDY SQUAD</small></div>
+    <div class="nav-label">YOUR SPACE</div>
+    <button data-page="home" class="active"><span class="nav-icon">⌂</span>Dashboard</button>
+    <button data-page="lessons"><span class="nav-icon">▤</span>Subjects & notes</button>
+    <button data-page="quiz"><span class="nav-icon">⚡</span>Quiz arena</button>
+    <button data-page="cards"><span class="nav-icon">▣</span>Flashcards</button>
+    <div class="nav-spacer"></div>
+    <a href="year8-study-guide.pdf" target="_blank" class="download-link">📄 Print study guide</a>
+    <div class="profile-chip"><span class="profile-avatar" id="profileButton">?</span><div><small>Playing as</small><b id="signedInAs">CHOOSE A USERNAME</b></div></div>
+    <div class="xp-chip">✨ <b id="xp">0</b> XP earned</div>
+  </aside>
+  <main>
+    <header class="topbar"><div><div class="eyebrow">YOUR PERSONAL REVISION SPACE</div><h1 id="title">Let's catch you up.</h1><p id="subtitle">Small steps. Big brain energy.</p></div><div class="top-avatar" id="avatarTop">✦</div></header>
+    <section id="home" class="page">
+      <div class="hero"><div><div class="eyebrow">✦ YOUR MISSION</div><h2>Turn missed lessons<br>into mastered lessons.</h2><p>Pick a subject, build your understanding, then take on the challenge. Your whole term is here.</p><div class="hero-actions"><button class="btn primary" id="start">Explore subjects →</button><button class="btn ghost-light" data-page="quiz">Take a quiz ⚡</button></div></div>
+        <div class="hero-art" role="img" aria-label="A cheerful purple study buddy holding a book"><span class="spark one">✦</span><span class="spark two">✧</span><span class="spark three">✦</span><div class="buddy"><div class="buddy-face"><span class="buddy-eye"></span><span class="buddy-eye"></span></div><span class="buddy-smile"></span><span class="buddy-book"></span></div></div></div>
+      <div class="stats"><div class="stat"><span class="stat-icon">📚</span><div><small>SUBJECTS</small><b id="count">18</b><span>All the term's subjects</span></div></div><div class="stat"><span class="stat-icon">✨</span><div><small>TOTAL XP</small><b id="xp2">0</b><span>Earn points as you learn</span></div></div><div class="stat"><span class="stat-icon">🏆</span><div><small>QUIZ BEST</small><b id="best">0%</b><span>Your personal best</span></div></div></div>
+      <div class="section-head"><div><h2>Your learning path</h2><p>Choose a subject to see the complete term scheme and revision notes.</p></div><a href="year8-study-guide.pdf" target="_blank">Print guide ↗</a></div><div id="grid" class="grid"></div>
+    </section>
+    <section id="lessons" class="page hide"><div class="section-head"><div><h2>Subjects & notes</h2><p>Search any subject or topic, then choose a week.</p></div></div><div class="toolbar"><input id="search" placeholder="Search subjects or topics…" aria-label="Search subjects or topics"><select id="weekSelect" aria-label="Choose scheme week"></select></div><div class="layout"><nav id="subjects" class="subject-list" aria-label="Subjects"></nav><article id="lesson" aria-live="polite">Choose a subject to open your notes ✨</article></div></section>
+    <section id="quiz" class="page hide"><div class="intro"><div class="eyebrow">⚡ QUIZ ARENA</div><h2>Ready for a brain workout?</h2><p>These are challenge questions: explain your thinking, apply ideas, and watch out for tempting distractors.</p><div class="solo-controls"><label>Subject<select id="quizSubject"><option value="all">All subjects</option></select></label><label>Scheme week<select id="quizWeek" aria-label="Choose quiz week"><option value="all">Whole term</option></select></label><button class="btn primary" id="begin">Start challenge →</button></div>
+      <div class="multiplayer"><div class="eyebrow">PLAY TOGETHER</div><h3>🎮 Brainwave Battle</h3><p>Invite friends by username for a live quiz across devices. Up to 10 players, no downloads.</p><div class="player-row"><select id="battleSubject" aria-label="Battle subject"><option value="all">All subjects</option></select><select id="battleWeek" aria-label="Battle week"><option value="all">Whole term</option></select><input id="inviteNames" maxlength="190" placeholder="Friend usernames, separated by commas" aria-label="Friend usernames"><button class="btn primary" id="createRoom">Create quiz & invite →</button></div><p id="cloudHint" class="cloud-hint" aria-live="polite"></p><div id="inbox" class="inbox"></div><div id="roomPanel" class="room-panel hide" aria-live="polite"></div></div></div><div id="quizbox"></div></section>
+    <section id="cards" class="page hide"><div class="section-head"><div><div class="eyebrow">QUICK RECALL</div><h2>Flashcard studio</h2><p>Try to say the answer out loud before flipping.</p></div></div><div class="card-toolbar"><select id="cardSubject" aria-label="Flashcard subject"></select><button class="btn secondary" id="shuffle">↻ Shuffle</button></div><div class="flash" id="flash" role="button" tabindex="0" aria-label="Tap or press Enter to flip the flashcard"><small id="cardcount">CARD</small><h2 id="front">Choose a subject</h2><p id="back" class="hide"></p><small>TAP TO FLIP</small></div><div class="center"><button class="btn secondary" id="prev">← Previous</button><button class="btn primary" id="next">Next card →</button></div></section>
+    <div class="mascot-tip"><span>🐸</span><div><b>Your study buddy says…</b><p>Try to explain what you learned without looking. If you can teach it, you know it!</p></div></div><footer>Made for curious Year 8 minds · <a href="year8-study-guide.pdf" target="_blank">📄 Open the printable study guide</a></footer>
+  </main>
+</div>
+<nav class="mobile-nav" aria-label="Main navigation"><button data-page="home" class="active"><span>⌂</span>Home</button><button data-page="lessons"><span>▤</span>Notes</button><button data-page="quiz"><span>⚡</span>Quiz</button><button data-page="cards"><span>▣</span>Cards</button></nav>
+<div id="welcome" class="welcome"><div class="welcome-card"><span class="welcome-star">🌟</span><small>WELCOME TO THE STUDY SQUAD</small><h1>What should we call you?</h1><p>Choose a username to save your progress and let friends invite you to a quiz.</p><form id="usernameForm"><input id="usernameInput" minlength="3" maxlength="18" required pattern="[A-Za-z0-9_]+" autocomplete="nickname" placeholder="Your username"><button class="btn primary" type="submit">Let's go →</button></form><small id="usernameMessage">Use 3–18 letters, numbers or underscores.</small></div></div>
+<script src="firebase-config.js"></script><script src="syllabus.js"></script><script src="expanded-data.js"></script><script src="app.js"></script><script src="identity-fallback.js"></script><script type="module" src="cloud.js"></script>
+</body></html>
